@@ -62,6 +62,7 @@ class MY_Controller extends CI_Controller
 		$this->g_layout->set("fan_page", $fan_page);
 
 		return $this->g_layout
+			->add_css_link(g_conf('url', 'longe')."p/css/default.css")
 			->add_js_include(array('jquery.validate.min', 'jquery.metadata', 'jquery.form'))
 			->set_meta("title", "《{$this->game_name}》")
 			->set_meta("keywords", "{$this->game_name}")

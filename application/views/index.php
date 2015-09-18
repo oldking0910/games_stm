@@ -1,9 +1,10 @@
 <!--slider -->
+<style>
+.img_button {cursor:pointer;}
+</style>
 <div class="game-sliderout">
 <ul class="game-slider">
-<li><img src="<?=$game_url?>p/image/primary/game-slider01-2.jpg" /></li>
-<li><img src="<?=$game_url?>p/image/primary/game-slider02.jpg"></li>
-<li><img src="<?=$game_url?>p/image/primary/game-slider03.jpg" /></li>
+<li><a href="https://177982.measurementapi.com/serve?action=click&publisher_id=177982&site_id=107644&destination_id=280800&my_campaign=WebsiteBN0914_01"><img src="<?=$game_url?>p/image/primary/event_banner.jpg" /></a></li>
 </ul>
 </div>
 
@@ -12,13 +13,13 @@
 	<ul class="icon">
 	    <li><a href="<?=$game_url?>" title="LOGO"><img src="<?=$game_url?>p/image/content-logo.png" /></a></li>
 	    <ul>
-	      <li><a href="<?=$longe_url?>payment?site=<?=$site?>" title="我要儲值"><img src="<?=$game_url?>p/image/content/btn01.png"  /></a></li>
-	      <li><a href="#" title="儲值版APK下載教學"><img src="<?=$game_url?>p/image/content/btn02.png"  /></a></li>
-	      <li><a href="https://176094.measurementapi.com/serve?action=click&publisher_id=176094&site_id=107644&destination_id=280870&my_campaign=0914_gamesite_DL_apk_01" title="官方APK下載"><img src="<?=$game_url?>p/image/content/btn03.png"  /></a></li>
+	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn01.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
+	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn02.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
+	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn03.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
 	    </ul>
 	    <ul>
-	        <li><a href="https://176094.measurementapi.com/serve?action=click&publisher_id=176094&site_id=107646&my_campaign=0914_gamesite_DL_appstore_01" title="APP STORE"><img src="<?=$game_url?>p/image/content/btn04.png"  /></a></li>
-	        <li><a href="https://176094.measurementapi.com/serve?action=click&publisher_id=176094&site_id=107644&destination_id=271150&my_campaign=0914_gamesite_DL_googleplay_01" title="GOOGLE PLAY商店"><img src="<?=$game_url?>p/image/content/btn05.png"  /></a></li>
+	        <li><img class="img_button" src="<?=$game_url?>p/image/content/btn04.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
+	        <li><img class="img_button" src="<?=$game_url?>p/image/content/btn05.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
 <?
 // 判斷是否為行動裝置, 電腦版才要顯示 QR Code
 $useragent=$_SERVER['HTTP_USER_AGENT'];
@@ -39,7 +40,7 @@ if($is_tablet == true || $is_mobile == true):
 <?
 else:
 ?>
-	        <li><a href="http://hyperurl.co/fthfe8?IQid=qr" title="時空前線"><img src="<?=$game_url?>p/image/content/btn07.png" /></a></li>
+	        <li><a href="http://hyperurl.co/fthfe8?IQid=qr" title="時空前線" target="_blank"><img src="<?=$game_url?>p/image/content/btn07.png" /></a></li>
 <?endif;?>
 	    </ul>
 	</ul>

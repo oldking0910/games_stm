@@ -1,5 +1,82 @@
+function OnClickRegister()
+{
+	$('#register_form').attr('action', '/event/e02_result?site=stm');
+    $('#doSubmit').trigger('click');
+}
+
+function OnClickCheckReward()
+{
+	$('#register_form').attr('action', '/event/e02_check_reward?site=stm');
+    $('#doSubmit').trigger('click');
+}
+
 //Scroll on reveal
 $(function() {
+	$("#register_form").validate({
+		onfocusout: false,
+		onkeyup: false,
+		onclick: false,
+		messages:
+		{
+			account: {
+				required: "E-Mail或手機號碼必填"
+			},
+			pwd: {
+				required: "`密碼`尚未填寫",
+				minlength: "`密碼`最少6碼",
+				maxlength: "`密碼`最多18碼",
+			},
+		},
+		showErrors: function(errorMap, errorList)
+		{
+		   var err = '';
+		   $(errorList).each(function(i, v)
+		   {
+			   err += v.message + "<br/>";
+		   });
+		   if (err)
+		   {
+				leOpenDialog('錯誤', err, leDialogType.MESSAGE);
+		   }
+		},
+		submitHandler: function(form)
+		{
+			$(form).ajaxSubmit({
+				dataType: 'json',
+				success: function(json)
+				{
+					if (json.status == 'success')
+					{
+						if(json.action == 'register')
+						{
+							leOpenDialog('註冊成功', '恭喜完成註冊！', leDialogType.MESSAGE, function()
+							{
+								$('input').prop('disabled', true);
+								$('.register_reward').css('display', 'block');
+								$('.form_steps').css('display', 'none');
+								$('#reward_sn').html(json.sn);
+							});
+						}
+						else if(json.action == 'check_reward')
+						{
+							$('input').prop('disabled', true);
+							$('.register_reward').css('display', 'block');
+							$('.form_steps').css('display', 'none');
+							$('#reward_sn').html(json.sn);
+						}
+						else
+						{
+							leOpenDialog('註冊成功', json.message, leDialogType.MESSAGE);
+						}
+					}
+					else
+					{
+						leOpenDialog('錯誤', json.message, leDialogType.MESSAGE);
+					}
+				}
+			});
+		}
+	});
 
   var $window           = $(window),
       win_height_padded = $window.height() * 1.1,

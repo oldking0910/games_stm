@@ -7,7 +7,7 @@
 <link href="/p/evt/01/css/style.css" rel="stylesheet" type="text/css">
 <link href="/p/evt/01/css/animate.css" rel="stylesheet" type="text/css">
 <script>
-window.onload = function()
+function fbLogin()
 {
 	FB.getLoginStatus(function(response)
 	{
@@ -48,13 +48,25 @@ window.onload = function()
 
 <body>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.4&appId=468528283307804";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '468528283307804',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+
+    fbLogin();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_TW/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <div id="content" style="display:none;">
 <div id="wrap">
 <div id="optionallike">
