@@ -4,7 +4,11 @@
 </style>
 <div class="game-sliderout">
 <ul class="game-slider">
-<li><a href="https://177982.measurementapi.com/serve?action=click&publisher_id=177982&site_id=107644&destination_id=280800&my_campaign=WebsiteBN0914_01"><img src="<?=$game_url?>p/image/primary/event_banner.jpg" /></a></li>
+<li><a href="https://www.facebook.com/stmlongeplay" target="_blank"><img src="<?=$game_url?>p/image/primary/1001_1366x398_01.jpg" /></a></li>
+<li><a href="https://www.facebook.com/stmlongeplay/photos/a.1703613513202938.1073741828.1676319125932377/1708251929405763/?type=3&theater" target="_blank"><img src="<?=$game_url?>p/image/primary/1001_1366x398_04.jpg" /></a></li>
+<li><a href="https://www.facebook.com/stmlongeplay/photos/a.1703613513202938.1073741828.1676319125932377/1707046619526294/?type=3&theater" target="_blank"><img src="<?=$game_url?>p/image/primary/1001_1366x398_02.jpg" /></a></li>
+<li><a href="https://www.facebook.com/stmlongeplay/photos/a.1703613513202938.1073741828.1676319125932377/1706426199588336/?type=3&theater" target="_blank"><img src="<?=$game_url?>p/image/primary/0924_1366x398.jpg" /></a></li>
+<li><a href="https://www.facebook.com/stmlongeplay?fref=ts" target="_blank"><img src="<?=$game_url?>p/image/primary/0921_1366x398.jpg" /></a></li>
 </ul>
 </div>
 
@@ -13,13 +17,13 @@
 	<ul class="icon">
 	    <li><a href="<?=$game_url?>" title="LOGO"><img src="<?=$game_url?>p/image/content-logo.png" /></a></li>
 	    <ul>
-	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn01.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
-	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn02.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
-	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn03.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
+	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn01.png" onclick="javascript:location.href='<?=$longe_url?>payment?site=<?=$site?>'" /></li>
+	      <li><img class="img_button" src="<?=$game_url?>p/image/content/btn02.png" onclick="javascript:location.href='https://www.facebook.com/notes/%E6%99%82%E7%A9%BA%E5%89%8D%E7%B7%9A-%E5%90%8C%E8%90%8C%E5%A4%A7%E4%BA%82%E9%AC%A5/%E6%99%82%E7%A9%BA%E5%89%8D%E7%B7%9A%E5%90%8C%E8%90%8C%E5%A4%A7%E4%BA%82%E9%AC%A5-%E5%84%B2%E5%80%BC%E7%89%88apk%E4%B8%8B%E8%BC%89%E6%95%99%E5%AD%B8/1708293432734946'" /></li>
+	      <li><a href="http://d3w0akihbk2umg.cloudfront.net/MobiarkHeroStm-20150930full.apk"><img class="img_button" src="<?=$game_url?>p/image/content/btn03.png" /></a></li>
 	    </ul>
 	    <ul>
 	        <li><img class="img_button" src="<?=$game_url?>p/image/content/btn04.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
-	        <li><img class="img_button" src="<?=$game_url?>p/image/content/btn05.png" onclick="leOpenDialog('時空前線','敬請期待！',leDialogType.MESSAGE)" /></li>
+	        <li><img class="img_button" src="<?=$game_url?>p/image/content/btn05.png" onclick="javascript:location.href='https://play.google.com/store/apps/details?id=com.longe.ark.stm'" /></li>
 <?
 // 判斷是否為行動裝置, 電腦版才要顯示 QR Code
 $useragent=$_SERVER['HTTP_USER_AGENT'];

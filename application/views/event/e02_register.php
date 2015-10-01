@@ -35,7 +35,18 @@
 <script type="text/javascript" src="<?=$game_url?>p/evt/02/Scripts/slick.min.js"></script>
 </head>
 <body>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+ga('create', 'UA-65559425-2', 'auto');
+ga('send', 'pageview');
+	
+ga('create', 'UA-65559425-1', 'auto', {'name': 'stmTracker'});
+ga('stmTracker.send', 'pageview');
+</script>
 <div id="wrap">
 <!-- Header -->
 <div id="header">
@@ -62,7 +73,7 @@
 <input type="password" name="pwd" class="required" placeholder="會員密碼" /></li>
 <li class="btn form_steps">
 <input name="doSubmit" type="submit" id="doSubmit" value="" style="display:none;" />
-<img style="cursor:pointer;" src="<?=$game_url?>p/evt/02/images/pre-btn.png" onclick="OnClickRegister();" alt="立即預約" /><img style="cursor:pointer;" src="<?=$game_url?>p/evt/02/images/query-btn.png" onclick="OnClickCheckReward();" alt="獎勵查詢"/>
+<img style="cursor:pointer;" src="<?=$game_url?>p/evt/02/images/query-btn.png" onclick="OnClickCheckReward();" alt="獎勵查詢"/>
 </li>
 <li class="register_reward" style="display:none;font-size:2em;text-align:center;">獎勵序號: <span id="reward_sn" class="important"></span></li>
 </ul>

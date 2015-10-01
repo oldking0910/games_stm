@@ -47,7 +47,9 @@ class Event extends MY_Controller
 	// 取得序號
 	function _e01_new_sn($uid)
 	{
-		$sqlstr = "UPDATE event_serial SET status=1,personal_id='{$uid}' WHERE id = (SELECT id from (SELECT id FROM event_serial WHERE event_id=2 and status=0 ORDER BY id LIMIT 1) as eid)";
+        $now = new DateTime();
+        $ts = $now->format('Y-m-d H:i:s');
+		$sqlstr = "UPDATE event_serial SET status=1,personal_id='{$uid}',create_time='{$ts}' WHERE id = (SELECT id from (SELECT id FROM event_serial WHERE event_id=2 and status=0 ORDER BY id LIMIT 1) as eid)";
 
 		$res = $this->db->query($sqlstr);
 
@@ -110,7 +112,9 @@ class Event extends MY_Controller
 	// 取得序號
 	function _e02_new_sn($uid)
 	{
-		$sqlstr = "UPDATE event_serial SET status=1,uid={$uid} WHERE id = (SELECT id from (SELECT id FROM event_serial WHERE event_id=1 and status=0 ORDER BY id LIMIT 1) as eid)";
+        $now = new DateTime();
+        $ts = $now->format('Y-m-d H:i:s');
+		$sqlstr = "UPDATE event_serial SET status=1,uid={$uid},create_time='{$ts}' WHERE id = (SELECT id from (SELECT id FROM event_serial WHERE event_id=1 and status=0 ORDER BY id LIMIT 1) as eid)";
 
 		$res = $this->db->query($sqlstr);
 
@@ -135,6 +139,7 @@ class Event extends MY_Controller
 
 	function e02_result()
 	{
+		/*
 		header('content-type:text/html; charset=utf-8');
 
 		$account = $this->input->post('account');
@@ -163,7 +168,7 @@ class Event extends MY_Controller
 		{
 			die(json_failure('E-Mail或行動電話格式錯誤'));
 		}
-
+        
 		$boolResult = $this->g_user->create_account($email, $mobile, $pwd);
 		if ($boolResult==true)
 		{
@@ -182,6 +187,7 @@ class Event extends MY_Controller
 		{
 			die(json_failure($this->g_user->error_message));
 		}
+		*/
 	}
 
 	function e02_check_reward()
@@ -221,6 +227,18 @@ class Event extends MY_Controller
 			}
 			else
 			{
+                // 若已建立帳號但尚未領取序號, 可直接獲得
+				/*
+                $sn = $this->_e02_new_sn($this->g_user->uid);
+                if($sn != false)
+                {
+                    die(json_message(array("message"=>"成功", "action"=>"check_reward", "sn"=>$sn), true));
+                }
+                else
+                {
+                    die(json_message(array("message"=>"因活動反應熱烈，所有序號已發放完畢！<br/>您的預註冊活動序號，將另行發送至您註冊會員時的 EMAIL 或手機簡訊。<br/>期待與您在《時空前線》同萌大亂鬥見面！")));
+                }
+				*/
 				die(json_failure("您的帳號未獲得獎勵序號！"));
 			}
 		}
