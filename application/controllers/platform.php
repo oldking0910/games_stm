@@ -26,6 +26,19 @@ class Platform extends MY_Controller
 	
 	function send_ob_mail()
 	{
+		$target_count = $this->input->post('target_count');
+		if(empty($target_count))
+			die();
 		
+		$this->load->library("g_send_mail");
+
+		for($cnt1 = 0; $cnt1 < $target_count; $cnt1++)
+		{
+			$this->g_send_mail->send_view($this->input->post('target'.$cnt1),
+											"《時空前線》Android上市！立即下載領取四星夏迎春！",
+											"mail/e02_register",
+											array(),
+											array("headerimg" => FCPATH."/p/image/mail/header.jpg"));
+		}
 	}
 }
